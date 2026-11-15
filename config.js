@@ -19,7 +19,9 @@ module.exports = {
   autodiscoverFilter: ['go-embedded-fortran/**'],
   onboarding: false,
   requireConfig: 'optional',
-  dependencyDashboard: true,
+  // The object form: Renovate's validator now migrates `true` to this and, under
+  // --strict, fails the ci job on the migration.
+  dependencyDashboard: { enabled: true },
   repositoryCache: 'enabled',
   // default.json beside this file is a PRESET, and a preset reaches a
   // repository only through an `extends` that names it. Sitting in the
